@@ -1,15 +1,15 @@
 {
-  "name": "oston-session",
+  "name": "storage-cross-protocol",
   "version": "0.0.2",
-  "description": "Utilizar session storage cross-protocol",
+  "description": "Manter a sessão após a alteração de protocolo.",
   "main": "index.js",
   "scripts": {
     "production": "webpack --env.NODE_ENV=production",
     "development": "webpack --env.NODE_ENV=development",
     "start": "webpack-dev-server --env.NODE_ENV=development"
   },
-  "author": "Oston <andrew@oston.io>",
-  "license": "ISC",
+  "author": "Andrew Rodrigues Brunoro <andrewrbrunoro@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-optional-chaining": "^7.9.0",
