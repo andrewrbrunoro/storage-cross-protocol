@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+    function saveStorage (evt) {
+        var message;
+        // if (evt.origin !== 'http://localhost:8080') {
+        //     message = window.location;
+        // } else {
+        //     message = evt.data + ' ' + evt.origin;
+        // }
+
+        if (evt.origin === 'http://localhost:8080') {
+            var data = evt.data;
+
+            if (data.type) {
+                var body = data.body;
+                var type = data.type;
+
+                switch (type) {
+                    case 'insert':
+                        localStorage.setItem(body.key, body.value);
+                        break;
+                    case 'delete':
+                        localStorage.removeItem(body.key);
+                        break;
+                    case 'clear':
+                        localStorage.clear();
+                        break;
+                    default:
+                        return;
+                }
+
+                parent.postMessage({type: 'updateStorage', body: JSON.stringify(localStorage)}, 'http://localhost:8080');
+            }
+        }
+    }
+
+    if (window.addEventListener) {
+        window.addEventListener('message', saveStorage, false);
+    } else {
+        window.attachEvent('onmessage', saveStorage);
+    }
+</script>
+</body>
+</html>

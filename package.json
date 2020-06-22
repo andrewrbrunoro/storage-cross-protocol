@@ -1,0 +1,25 @@
+{
+  "name": "oston-session",
+  "version": "0.0.2",
+  "description": "Utilizar session storage cross-protocol",
+  "main": "index.js",
+  "scripts": {
+    "production": "webpack --env.NODE_ENV=production",
+    "development": "webpack --env.NODE_ENV=development",
+    "start": "webpack-dev-server --env.NODE_ENV=development"
+  },
+  "author": "Oston <andrew@oston.io>",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "webpack": "^4.42.1",
+    "webpack-auto-inject-version": "^1.2.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.10.3",
+    "compression-webpack-plugin": "^3.1.0"
+  }
+}
